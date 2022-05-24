@@ -7,11 +7,73 @@
 		<title>
             這裡是標題
         </title>
+		<script>
+			//document.write("Hello, world!");
+			//console.log("Hello, world!");
+			function guessNumber(){
+				//ans=Math.random(); //產生一個0~1之間的浮點數(不包含1)
+				//ans=Math.random()*40; //產生一個0~40之間的浮點數(不含40)
+				ans=Math.floor(Math.random()*100+1); //產生一個1~40之間的浮點數(包含40)
+				//alert(ans);
+
+				x=prompt("請輸入資料"); //當作是輸入的一種 確定就會去抓資料 取消的話就會變成null
+				while(x!=ans){
+					if(x>ans){
+						x=prompt("太大囉");
+					}else{
+						x=prompt("太小囉");
+					}
+				}	
+				alert("恭喜答對");
+				
+			}
+			i=0;
+			function count(){
+				i++;
+				alert("你已經按了"+i+"次");
+			}
+			i=0;
+			function change(){
+				i++
+				if (i>9){
+					document.querySelector("#start").innerHTML="ABC";
+					document.querySelector("#bt4").style.display="block";
+				}
+				
+			}
+			function hide(){
+				if(document.querySelector("#start").style.display=="none"){
+					document.querySelector("#start").style.display="block";
+					document.querySelector("#bt3").innerHTML="我可以隱藏標題";
+				}else{
+					document.querySelector("#start").style.display="none";
+					document.querySelector("#bt3").innerHTML="我可以顯示標題";
+				}
+				
+			}
+			function change2(){
+				stitle=document.querySelector("#cin").value;
+				document.querySelector("#start").innerHTML = stitle;
+			}
+			function over(){
+				document.querySelector("#t2").style.color="red";
+			}
+			function unover(){
+				document.querySelector("#t2").style.color="blue";
+			}
+		</script>
 	</head>
 	<body>
-		<h1 id="start">這是第一級標題</h1>
-		<h2 class="abc">
-			<span>這是第二級標題</span>
+		<button onclick="guessNumber()">我是猜數字</button>
+		<button onclick="change()">我可以改標題</button>
+		<button onclick="hide()" id="bt3">我可以隱藏標題</button>
+		<input id="cin"></input>
+		<button onclick="change2()" id="bt3">我可以根據輸入改標題</button>
+		<button id="bt4" style="display:none">這是一個隱藏按鈕</button>
+		<div id="start2" style="display:block">
+		<h1 id="start" style="display:block" onclick="change()">這是第一級標題</h1>
+		<h2>
+			<span id="t2" onmouseover="over()" onmouseout="unover()">這是第二級標題</span>
 		</h2>
 		<h3>這是第三級標題</h3>
 		<h4>這是第四級標題</h4>
@@ -116,5 +178,7 @@
 				<img src="https://i.imgur.com/vT3Saud.jpg" width="800px" height="600px" alt="koreafish">
 					<br>
 						<img src="https://truth.bahamut.com.tw/s01/202204/2846c323f19e5750ea4be1146d039a65.JPG" width="10%">
+			</div>
+			<a href="https://www.mfwzjsq.com/" target="_blank"><img src="https://www.mfwzjsq.com/hit.php?id=zuumopqo&nd=6&style=5" border="0" alt="網頁計數器"></a>
 				</body>
 					</html>
